@@ -1,17 +1,24 @@
-// import { useState } from 'react'
-import './App.css'
+
+// for react carousels
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Router,Routes } from 'react-router-dom';
+
+
+import { Route,Routes } from 'react-router-dom';
+
+//pages
+
+import HomePage from './Pages/Home.page';
+import PlayPage from './Pages/Play.page';
+import MoviePage from './Pages/Movie.page';
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  
   return (
     <Routes>
-      {/* <h1 className="text-3xl font-bold underline">
-      Hello world!
-       </h1> */}
+    <Route path='/' element={<HomePage/>} />
+    <Route path='/movies/:id' element={<MoviePage/>} />
+    <Route path='/playit' element={<PlayPage/>} />
     </Routes>
   )
 }
